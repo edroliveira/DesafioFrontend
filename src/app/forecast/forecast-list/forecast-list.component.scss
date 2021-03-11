@@ -1,0 +1,75 @@
+h2 {
+    margin: auto;
+    color: rgb(255, 255, 126);
+}
+
+.form-card {
+    margin: auto;
+    margin-top: 40px;
+    width: 50%;
+
+    h2 {
+        margin-bottom: 15px;
+    }
+
+    .btn {
+        margin-left: 5px;
+    }
+
+    .add {
+        background-color: rgb(0, 225, 255);
+    }
+
+    .update {
+        background-color: greenyellow;
+    }
+
+    .txt-input {
+        margin-top: 20px;
+        width: 97%;
+    }
+}
+
+#list-card {
+    margin:auto;
+    margin-top: 40px;
+    width: 50%;
+
+    mat-card-header {
+        margin-bottom: 15px;
+    }
+
+    .refresh {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+}
+
+#fc-object {
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+    border: 1px solid #ffffff;
+    border-radius: 8px;
+
+    .id {
+        color: rgb(255, 110, 57);
+    }
+
+    .date {
+        color: rgb(0, 238, 255);
+    }
+
+    .condition {
+        color: yellow;
+    }
+}
+
+#btn-container {
+    margin-top: 10px;
+
+    .alt {
+        margin-right: 10px;
+    }
+}
