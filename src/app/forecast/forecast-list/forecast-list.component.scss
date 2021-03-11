@@ -46,12 +46,18 @@ h2 {
 
 }
 
+.grid-row {
+    border: 1px solid #595959;
+}
+
 #fc-object {
-    padding: 10px;
-    text-align: center;
-    margin-bottom: 20px;
-    border: 1px solid #ffffff;
+    height: 95%;
+    width: 95%;
     border-radius: 8px;
+
+    .btn-container {
+        align-self: flex-end;
+    }
 
     .id {
         color: rgb(255, 110, 57);

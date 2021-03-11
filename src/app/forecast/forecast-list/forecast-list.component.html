@@ -1,23 +1,5 @@
-<!-- <div>
-    <form #forecastForm>
-        <div>
-            <p>
-                <mat-form-field appearance="outline">
-                    <mat-label>Outline form field</mat-label>
-                    <input matInput placeholder="Placeholder">
-                    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-                    <mat-hint>Hint</mat-hint>
-                </mat-form-field>
-            </p>
-        </div>
-    </form>
-</div> -->
-
 <div>
-
-
     <mat-card class="form-card">
-
         <mat-card-header>
             <h2>Adicionar Novo Registro</h2>
         </mat-card-header>
@@ -25,6 +7,7 @@
         <mat-divider></mat-divider>
 
         <form [formGroup]="forecastForm" (ngSubmit)="onSubmit()">
+
             <mat-grid-list cols="3" rowHeight="100px">
                 <mat-grid-tile>
                     <mat-form-field appearance="outline" color="accent" class="txt-input">
@@ -45,11 +28,14 @@
                     </mat-form-field>
                 </mat-grid-tile>
             </mat-grid-list>
+
             <button mat-raised-button type="submit" class="btn add"> Adicionar </button>
 
         </form>
     </mat-card>
+</div>
 
+<div>
     <mat-card class="form-card">
 
         <mat-card-header>
@@ -59,8 +45,6 @@
         <mat-divider></mat-divider>
 
         <form [formGroup]="forecastUpdateForm" (ngSubmit)="updateForecast(idForecast.value)">
-
-
 
             <mat-grid-list cols="4" rowHeight="100px">
                 <mat-grid-tile>
@@ -89,13 +73,20 @@
                 </mat-grid-tile>
             </mat-grid-list>
 
-            <button mat-raised-button type="submit" class="btn" color="primary"> Atualizar </button>
+            <button 
+            mat-raised-button 
+            type="submit" 
+            class="btn" 
+            color="primary"> 
+                Atualizar 
+            </button>
 
         </form>
     </mat-card>
+</div>
 
+<div>
     <mat-card id="list-card">
-
         <mat-card-header>
             <h2> Lista de Registros </h2>
         </mat-card-header>
@@ -113,32 +104,42 @@
                     Atualizar Lista
                 </button>
             </div>
+
+
+
+                <mat-grid-list cols="2" rowHeight="150px">
+                    <mat-grid-tile class="grid-row"  *ngFor="let forecast of forecasts">
+                        <div id="fc-object">
+                            <span> 
+                                ID: <span class="id">{{ forecast.id }}</span> 
+                            </span> <br />
+                            <span> 
+                                Data: <span class="date">{{ forecast.date }}</span> 
+                            </span> <br />
+                            <span> 
+                                Descrição: <span class="description">{{ forecast.description }}</span> 
+                            </span> <br />
+                            <span> 
+                                Condição: <span class="condition">{{ forecast.condition }}</span> 
+                            </span> <br />
+
+                            <div id="btn-container">
+                                <button 
+                                mat-raised-button 
+                                color="warn" 
+                                class="btn exc" 
+                                (click)="deleteForecast(forecast.id)"> 
+                                    Excluir 
+                                </button>
+                            </div>
+                        </div>
+                        
+
+                    </mat-grid-tile>
+                </mat-grid-list>
             
 
-            <div id="fc-object" *ngFor="let forecast of forecasts">
-                <span> 
-                    ID: <span class="id">{{ forecast.id }}</span> 
-                </span> <br>
-                <span> 
-                    Data: <span class="date">{{ forecast.date }}</span> 
-                </span> <br>
-                <span> 
-                    Descrição: <span class="description">{{ forecast.description }}</span> 
-                </span> <br>
-                <span> 
-                    Condição: <span class="condition">{{ forecast.condition }}</span> 
-                </span> <br>
-                
-                <div id="btn-container">
-                    <button 
-                    mat-raised-button 
-                    color="warn" 
-                    class="btn exc" 
-                    (click)="deleteForecast(forecast.id)"> 
-                        Excluir 
-                    </button>
-                </div>
-            </div>
+        
         </mat-card-content>
     </mat-card>
 </div>
